@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    font-family: 'Roboto', sans-serif;
+    background-color: #090727;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 50px;
+    color: #eeeeee;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 35px;
+    color: #eeeeee;
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h3 {
+    text-align: center;
+    font-size: 35px;
+    color: #eeeeee;
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10% 15%;
+}
+
+.option {
+    outline: 5px solid #0592ca;
+    border: none;
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 5px 25px;
+    font-size: 35px;
+    font-weight: 700;
+    transition: .2s background-color ease-in-out;
+    color: #eeeeee;
+}
+
+.option:hover {
+    background-color: #0592ca;
+}
