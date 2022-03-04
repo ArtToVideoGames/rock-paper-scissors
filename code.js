@@ -12,35 +12,11 @@ function computerPlay() {
     }
 }
 
-function gameLoop() {
+let playerWin = 0;
+let compWin = 0;
 
-    let playerWin = 0;
-    let compWin = 0;
-
-    for(let i = 0; i < 5; i++) {
-        let winner = gamePlay();
-
-        if(winner == 1) 
-        {
-            compWin++;
-            console.log("Player Wins: " + playerWin);
-            console.log("Computer Wins: " + compWin);
-        }
-        else if(winner == 2) 
-        {
-            playerWin++;
-            console.log("Player Wins: " + playerWin);
-            console.log("Computer Wins: " + compWin);
-        }
-        else if(winner == 0) {
-            console.log("Player Wins: " + playerWin);
-            console.log("Computer Wins: " + compWin);
-        }
-    }
-}
-
-function gamePlay() {
-    let playerSelection = prompt("Make your selection of Rock, Paper, or Scissors: ");
+function gamePlay(select) {
+    let playerSelection = select;
     let computerSelection = computerPlay();
     
     playerSelection = playerSelection.toLowerCase();
@@ -50,33 +26,198 @@ function gamePlay() {
 
     if(playerSelection == computerSelection) {
         console.log("You Tied! " + playerSelection + " is the same as " + computerSelection);
-        return 0;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Tied! " + playerSelection + " is the same as " + computerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
+        
     }
     else if (playerSelection == "Rock" && computerSelection == "Paper") {
         console.log("You Lost! " + computerSelection + " beats " + playerSelection);
-        return 1;
+        compWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Lost! " + computerSelection + " beats " + playerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
     else if (playerSelection == "Paper" && computerSelection == "Scissors") {
         console.log("You Lost! " + computerSelection + " beats " + playerSelection);
-        return 1;
+        compWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Lost! " + computerSelection + " beats " + playerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
     else if (playerSelection == "Scissors" && computerSelection == "Rock") {
         console.log("You Lost! " + computerSelection + " beats " + playerSelection);
-        return 1;
+        compWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Lost! " + computerSelection + " beats " + playerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
     else if (playerSelection == "Paper" && computerSelection == "Rock") {
         console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        return 2;
+        playerWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Win! " + playerSelection + " beats " + computerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
     else if (playerSelection == "Rock" && computerSelection == "Scissors") {
         console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        return 2;
+        playerWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Win! " + playerSelection + " beats " + computerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
     else if (playerSelection == "Scissors" && computerSelection == "Paper") {
         console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        return 2;
+        playerWin++;
+        console.log("Player Wins: " + playerWin);
+        console.log("Computer Wins: " + compWin);
+
+        const prevText = document.querySelectorAll('.created');
+        prevText.forEach(created => {
+            created.remove();
+        });
+
+        let text = document.createElement('h2');
+        text.innerHTML = "You Win! " + playerSelection + " beats " + computerSelection;
+        text.className = "created";
+
+        let player = document.createElement('h3');
+        player.innerHTML = "Your Score: " + playerWin;
+        player.className = "created";
+
+        let comp = document.createElement('h3');
+        comp.innerHTML = "Computer's Score: " + compWin;
+        comp.className = "created";
+
+        let box = document.getElementById("finalText");
+        box.appendChild(text);
+        box.appendChild(player);
+        box.appendChild(comp);
     }
 }
-
-gameLoop();
-console.log("Game Ended, refresh to play again!");
